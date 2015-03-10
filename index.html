@@ -13,9 +13,10 @@
 		MELI.init({client_id: 6313778535007185}); 
 		MELI.login(function() {
 			token = MELI.getToken();
+			alert(token);
 		MELI.get(
 	 		"/users/me",{},
-		    function(data) { alert("Hello "+data[2].id) }
+		    function(data) { alert("Hello "+data[2].cust_id) }
 		);
 		
 	});
