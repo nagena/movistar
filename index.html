@@ -16,7 +16,11 @@
 			alert(token);
 		MELI.get(
 	 		"/users/me",{},
-		    function(data) { alert("Hello "+data[2].id) }
+		    function(data) { 
+		    	alert("Hello "+data[2].id) 
+		    	MELI.get("/users/"+data[2].id+"/mercadopago_account/balance",{},function(data){})
+		    	
+		    }
 		);
 		
 	});
