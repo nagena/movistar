@@ -13,9 +13,9 @@
 		MELI.init({client_id: 8258968359213576}); 
 		MELI.login(function() {
 		MELI.get(
-	 		"/mpmobile/users/me/balance",{},
+	 		"/users/me",{},
 		    function(data) { 
-		    	alert("Hello "+data[2]);
+		    	alert("Hello "+data[2].id);
 		    }
 		);
 		
