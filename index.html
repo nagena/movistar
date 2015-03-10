@@ -5,11 +5,11 @@
 </head>
 <body>
 	<form name="createForm" id="createForm">
-		<button id='buttonTest'>movistar</button>
+		<button id='buttonTest' type='submit'>movistar</button>
 	</form>
 	<script>
 	var token = null;
-	$('#buttonTest').on('click',function(e){
+	$('#createForm').on('submit',function(e){
 		MELI.init({client_id: 6313778535007185}); 
 		MELI.login(function() {
 			token = MELI.getToken();
