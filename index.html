@@ -12,16 +12,10 @@
 	$('#createForm').on('submit',function(e){
 		MELI.init({client_id: 8258968359213576}); 
 		MELI.login(function() {
-			token = MELI.getToken();
-			alert(token);
 		MELI.get(
-	 		"/users/me",{},
+	 		"/mpmobile/users/me/balance",{},
 		    function(data) { 
-		    	alert("Hello "+data[2].id) 
-		    	MELI.get("/users/"+data[2].id+"/mercadopago_account/balance",{},function(data){
-		    		alert("Hello "+data[2].available_balance) 
-		    	})
-		    	
+		    	alert("Hello "+data[2]);
 		    }
 		);
 		
