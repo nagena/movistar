@@ -10,8 +10,8 @@
 	</form>
 	<script>
 	var userID = null;
+	MELI.init({client_id: 1861424977189975}); 
 	$('#createForm').on('submit',function(e){
-		MELI.init({client_id: 1861424977189975}); 
 		MELI.login(function() {
 		MELI.get("/users/me",{},function(data) {
 			userID = data[2].id
