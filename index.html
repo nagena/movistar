@@ -5,18 +5,25 @@
 </head>
 <body>
 	<form name="createForm" id="createForm">
-		<button id='buttonTest' type='submit'>movistar</button>
+		<button id='buttonTest' type='number'>movistar</button>
+		<button id='buttonSubmit' type='submit'>movistar</button>
 	</form>
 	<script>
-	var token = null;
+	var custID = null;
 	$('#createForm').on('submit',function(e){
 		MELI.init({client_id: 8258968359213576}); 
 		MELI.login(function() {
 		MELI.get(
-	 		"/users/me",{},
-		    function(data) { 
-		    	alert("Hello "+data[2].id);
-		    }
+	 		"/users/me",{},function(data) { custID=data[2].id);}
+		);
+		MELI.get(
+	 		"/users/"+custID+"/mercadopago_account/balance",{},function(data) 
+	 		{ 
+	 			
+	 			//si no tiene saldo entonces fondeo
+	 			//window.location.href = "https://www.mercadopago.com/mlv/fund";
+	 			
+	 		}
 		);
 		
 	});
