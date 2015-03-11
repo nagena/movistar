@@ -5,7 +5,7 @@
 </head>
 <body>
 	<form name="createForm" id="createForm">
-		<button id='buttonTest' type='number'>movistar</button>
+		<button id='buttonTest' type='number'></button>
 		<button id='buttonSubmit' type='submit'>movistar</button>
 	</form>
 	<script>
@@ -14,7 +14,7 @@
 		MELI.init({client_id: 8258968359213576}); 
 		MELI.login(function() {
 		MELI.get(
-	 		"/users/me",{},function(data) { custID=data[2].id);}
+	 		"/users/me",{},function(data) { custID=data[2].id)}
 		);
 		MELI.get(
 	 		"/users/"+custID+"/mercadopago_account/balance",{},function(data) 
