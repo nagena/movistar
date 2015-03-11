@@ -14,7 +14,7 @@
 		MELI.login(function() {
 		MELI.get("/users/me",{},function(data) { 
 			MELI.get("/users/"+data[2].id+"/mercadopago_account/balance",{},function(data) { 
-	 			if(data[2].available_balance < $("#buttonTest").value){
+	 			if(data[2].available_balance < $("#buttonTest").val()){
 	 				window.location.href = "https://www.mercadopago.com/mlv/fund";	
 	 			}else{
 	 				//go to create preference
