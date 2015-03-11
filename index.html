@@ -13,18 +13,12 @@
 	$('#createForm').on('submit',function(e){
 		MELI.init({client_id: 8258968359213576}); 
 		MELI.login(function() {
-		MELI.get(
-	 		"/users/me",{},function(data) { custID=data[2].id)}
-		);
-		MELI.get(
-	 		"/users/"+custID+"/mercadopago_account/balance",{},function(data) 
-	 		{ 
+		MELI.get("/users/me",{},function(data) { custID=data[2].id});
+		MELI.get("/users/"+custID+"/mercadopago_account/balance",{},function(data) { 
 	 			//if(data[2])
 	 			//si no tiene saldo entonces fondeo
 	 			//window.location.href = "https://www.mercadopago.com/mlv/fund";
-	 			
-	 		}
-		);
+	 			});
 		
 	});
         return false;
