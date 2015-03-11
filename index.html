@@ -10,7 +10,7 @@
 	</form>
 	<script>
 	$('#createForm').on('submit',function(e){
-		MELI.init({client_id: 174535676813110}); 
+		MELI.init({client_id: 8258968359213576}); 
 		MELI.login(function() {
 		MELI.get("/users/me",{},function(data) { 
 			MELI.get("/users/"+data[2].id+"/mercadopago_account/balance",{},function(data) { 
