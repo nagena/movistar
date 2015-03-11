@@ -20,7 +20,7 @@
 				return false;
 			}
 			MELI.get("/users/"+userID+"/mercadopago_account/balance",{},function(data) { 
-	 			if(data[2].available_balance < $("#buttonTest").val()){
+	 			if((data[2].available_balance < $("#buttonTest").val()) || data[2].available_balance == 0){
 	 				window.location.href = "https://www.mercadopago.com/mlv/fund";	
 	 			}else{
 	 				//go to create preference
