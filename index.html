@@ -1,39 +1,8 @@
 <html>
 <head>
 <script src="http://static.mlstatic.com/org-img/sdk/mercadolibre-1.0.4.js"></script>
-<script src="https://secure.mlstatic.com/org-img/ch/vendor/jquery/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="http://resources.mlstatic.com/mptools/render.js"></script>
 </head>
 <body>
 	<a href="https://www.mercadopago.com/checkout/pay?pref_id=117196407-4c046f63-fc80-4a23-bae7-92f4ca4de49c" name="MP-Checkout" mp-mode="modal">Pagar</a>
-	<form name="createForm" id="createForm">
-		<input id='buttonTest' type='number'></input>
-		<button id='buttonSubmit' type='submit'>movistar</button>
-	</form>
-	<script>
-	var userID = null;
-	MELI.init({client_id: 1861424977189975}); 
-	$('#createForm').on('submit',function(e){
-		MELI.login(function() {
-		MELI.get("/users/me",{},function(data) {
-			userID = data[2].id
-			if(userID == null || userID == 'undefined'){
-				alert("no se pudo recuperar info del usuario");
-				return false;
-			}
-			MELI.get("/users/"+userID+"/mercadopago_account/balance",{},function(data) { 
-	 			if((data[2].available_balance < $("#buttonTest").val()) || data[2].available_balance == 0){
-	 				window.location.href = "https://www.mercadopago.com/mlv/fund";	
-	 			}else{
-	 				//go to create preference
-	 				alert("go to create preference");
-	 			}
-	 		});
-		});
-		
-	});
-        return false;
-    });
-    </script>
 </body>
 </html>
